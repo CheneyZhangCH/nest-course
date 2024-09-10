@@ -23,7 +23,7 @@ export class DbService {
     return JSON.parse(str);
   }
 
-  async write(obj: User[]) {
+  async write<T>(obj: T[]) {
     await writeFile(this.options.path, JSON.stringify(obj || []), {
       encoding: 'utf-8',
     });

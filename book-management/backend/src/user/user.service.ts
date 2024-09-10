@@ -24,7 +24,7 @@ export class UserService {
     user.username = registryUserDto.username;
     user.password = registryUserDto.password;
     users.push(user);
-    await this.dbService.write(users);
+    await this.dbService.write<User>(users);
     return users;
   }
 
